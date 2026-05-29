@@ -1,1 +1,0 @@
-# Medial_ai
