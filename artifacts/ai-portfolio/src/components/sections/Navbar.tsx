@@ -33,7 +33,7 @@ export default function Navbar() {
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         <a href="#hero" className="text-xl font-bold tracking-tighter text-white flex items-center gap-2">
           <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-primary to-secondary animate-pulse-glow" />
-          <span>V<span className="text-primary">.</span>AI</span>
+          <span>N<span className="text-primary">.</span>AI</span>
         </a>
         
         <nav className="hidden md:flex items-center gap-8">
