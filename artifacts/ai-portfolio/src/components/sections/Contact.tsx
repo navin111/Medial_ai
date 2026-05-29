@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { SiGithub } from "react-icons/si";
-import { Linkedin, Mail, Send, MapPin, CheckCircle } from "lucide-react";
+import { Linkedin, Mail, Send, MapPin, CheckCircle, Phone } from "lucide-react";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -87,6 +87,34 @@ export default function Contact() {
                 <div>
                   <p className="text-xs text-muted-foreground mb-0.5 uppercase tracking-widest">LinkedIn</p>
                   <p className="text-white text-sm font-medium group-hover:text-secondary transition-colors">navin-sharma-85034030</p>
+                </div>
+              </a>
+
+              <a
+                href="tel:+919810659869"
+                data-testid="link-phone-1"
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+                  <Phone className="w-5 h-5 text-green-400" />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground mb-0.5 uppercase tracking-widest">Phone</p>
+                  <p className="text-white text-sm font-medium group-hover:text-green-400 transition-colors">+91 98106 59869</p>
+                </div>
+              </a>
+
+              <a
+                href="tel:+917985341359"
+                data-testid="link-phone-2"
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+                  <Phone className="w-5 h-5 text-green-400" />
+                </div>
+                <div>
+                  <p className="text-xs text-muted-foreground mb-0.5 uppercase tracking-widest">Phone</p>
+                  <p className="text-white text-sm font-medium group-hover:text-green-400 transition-colors">+91 79853 41359</p>
                 </div>
               </a>
 
