@@ -204,7 +204,7 @@ export default function Contact() {
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-10 border-t border-white/10">
           <div className="text-white/50 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} Navin Sharma. Built with React & Framer Motion.
+            © {new Date().getFullYear()} navin.ai. Built with React & Framer Motion.
           </div>
           <div className="flex items-center gap-2 text-white/30 text-xs">
             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
