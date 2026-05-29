@@ -1,49 +1,40 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { SiGithub } from "react-icons/si";
+import { Mic, FileText, Map, AudioLines } from "lucide-react";
 
 const completedProjects = [
   {
     id: 1,
-    name: "NeuralChat",
-    desc: "GPT-4 powered enterprise chatbot with 95% resolution rate. Deployed to 50k+ active daily users.",
-    tags: ["GPT-4", "Node.js", "React"],
-    gradient: "from-blue-600 to-violet-600",
+    name: "AI Voice Chat Bot",
+    desc: "Conversational voice AI bot built with Python that understands natural speech, processes queries in real-time, and responds with human-like voice output using speech synthesis.",
+    tags: ["Python", "OpenAI", "Speech Recognition", "TTS"],
+    gradient: "from-blue-600 to-violet-700",
+    icon: Mic,
   },
   {
     id: 2,
-    name: "VisionAI",
-    desc: "Real-time object detection at 60fps on edge devices. Optimized MobileNet architecture.",
-    tags: ["TensorFlow", "Python", "OpenCV"],
+    name: "ATS Resume Formatter",
+    desc: "Intelligent resume parser and formatter that optimizes CVs for Applicant Tracking Systems, scoring keyword matches and restructuring content for maximum visibility.",
+    tags: ["Python", "NLP", "PDF Parsing", "spaCy"],
     gradient: "from-emerald-500 to-teal-700",
+    icon: FileText,
   },
   {
     id: 3,
-    name: "SentimentPulse",
-    desc: "Processes 1M+ tweets/day with 92% accuracy. Real-time brand monitoring dashboard.",
-    tags: ["PyTorch", "FastAPI", "Redis"],
+    name: "Agent Trip Planner",
+    desc: "Autonomous AI travel agent that plans complete itineraries — flights, hotels, activities — using multi-step reasoning and live web data, powered by LangChain agents.",
+    tags: ["Python", "LangChain", "AI Agents", "LLM"],
     gradient: "from-rose-500 to-pink-700",
+    icon: Map,
   },
   {
     id: 4,
-    name: "DeepDreamer",
-    desc: "Stable Diffusion fine-tuning pipeline for custom art styles. Includes automated LoRA training.",
-    tags: ["Diffusion Models", "CUDA", "Python"],
-    gradient: "from-indigo-500 to-purple-800",
-  },
-  {
-    id: 5,
-    name: "DataMind",
-    desc: "Predictive churn analytics with 89% AUC. End-to-end data pipeline.",
-    tags: ["scikit-learn", "Plotly", "PostgreSQL"],
+    name: "Audio to Text Summarizer",
+    desc: "End-to-end pipeline that transcribes audio files using Whisper and produces concise, structured summaries with key points, action items, and sentiment analysis.",
+    tags: ["Python", "Whisper", "OpenAI", "NLP"],
     gradient: "from-amber-500 to-orange-700",
-  },
-  {
-    id: 6,
-    name: "AutoLabel",
-    desc: "Semi-supervised data labeling tool saving 80% annotation time via active learning.",
-    tags: ["Active Learning", "React", "Python"],
-    gradient: "from-cyan-500 to-blue-700",
+    icon: AudioLines,
   },
 ];
 
@@ -56,29 +47,31 @@ export default function Projects() {
         viewport={{ once: true }}
         className="mb-16"
       >
-        <h2 className="text-3xl md:text-5xl font-bold mb-4">Production <span className="text-primary">Deployments.</span></h2>
-        <p className="text-muted-foreground text-lg max-w-2xl">Completed projects that are currently operating in the wild, serving real users and crunching real data.</p>
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">My <span className="text-primary">Projects.</span></h2>
+        <p className="text-muted-foreground text-lg max-w-2xl">Real AI systems built and shipped — each one solving a genuine problem with cutting-edge technology.</p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {completedProjects.map((p, i) => (
           <motion.div
             key={p.id}
+            data-testid={`card-project-${p.id}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: i * 0.1, duration: 0.5 }}
             className="group relative rounded-2xl bg-card border border-white/5 overflow-hidden hover:border-primary/50 transition-all hover:-translate-y-2 hover:shadow-[0_10px_30px_rgba(111,66,193,0.15)]"
           >
-            <div className={`h-48 w-full bg-gradient-to-br ${p.gradient} opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center`}>
-              {/* Abstract shape placeholder for project visual */}
-              <div className="w-24 h-24 rounded-full bg-black/20 backdrop-blur-sm border border-white/20" />
+            <div className={`h-44 w-full bg-gradient-to-br ${p.gradient} opacity-80 group-hover:opacity-100 transition-opacity flex items-center justify-center`}>
+              <div className="w-20 h-20 rounded-2xl bg-black/20 backdrop-blur-sm border border-white/20 flex items-center justify-center">
+                <p.icon className="w-9 h-9 text-white/90" />
+              </div>
             </div>
-            
+
             <div className="p-6">
               <h3 className="text-xl font-bold text-white mb-2">{p.name}</h3>
-              <p className="text-sm text-white/70 mb-6 line-clamp-2">{p.desc}</p>
-              
+              <p className="text-sm text-white/70 mb-6 leading-relaxed">{p.desc}</p>
+
               <div className="flex flex-wrap gap-2 mb-6">
                 {p.tags.map(tag => (
                   <span key={tag} className="px-2 py-1 rounded-md bg-white/5 text-[11px] font-mono text-white/60">
@@ -86,12 +79,19 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-              
+
               <div className="flex items-center justify-between">
-                <a href="#" className="text-sm font-medium text-secondary hover:text-white transition-colors flex items-center gap-1">
-                  View Case Study <span>→</span>
-                </a>
-                <a href="#" className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-colors">
+                <span className="flex items-center gap-2 text-xs text-green-400 font-mono">
+                  <span className="w-2 h-2 rounded-full bg-green-400" />
+                  Completed
+                </span>
+                <a
+                  href="https://www.linkedin.com/in/navin-sharma-85034030/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid={`link-github-${p.id}`}
+                  className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-white/50 hover:text-white hover:bg-white/10 transition-colors"
+                >
                   <SiGithub />
                 </a>
               </div>
