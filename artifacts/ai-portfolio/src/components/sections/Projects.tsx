@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { SiGithub } from "react-icons/si";
-import { Mic, FileText, Map, AudioLines } from "lucide-react";
+import { Mic, FileText, Map, AudioLines, ImagePlay, BrainCircuit, MessagesSquare, Code2, Layers, Wand2 } from "lucide-react";
 
 const completedProjects = [
   {
@@ -35,6 +35,54 @@ const completedProjects = [
     tags: ["Python", "Whisper", "OpenAI", "NLP"],
     gradient: "from-amber-500 to-orange-700",
     icon: AudioLines,
+  },
+  {
+    id: 5,
+    name: "AI Image Generation Studio",
+    desc: "Creative studio powered by Stable Diffusion and ControlNet that generates high-quality images from text prompts with style control, inpainting, and batch processing.",
+    tags: ["Stable Diffusion", "ControlNet", "Python", "CUDA"],
+    gradient: "from-fuchsia-600 to-purple-800",
+    icon: ImagePlay,
+  },
+  {
+    id: 6,
+    name: "RAG Document Chat",
+    desc: "Chat with any document — PDFs, URLs, or text files — using Retrieval-Augmented Generation. Provides accurate, source-cited answers from large private knowledge bases.",
+    tags: ["LangChain", "FAISS", "OpenAI", "Python"],
+    gradient: "from-cyan-500 to-blue-700",
+    icon: MessagesSquare,
+  },
+  {
+    id: 7,
+    name: "LLM Fine-Tuning Pipeline",
+    desc: "End-to-end platform for fine-tuning open-source LLMs on custom datasets using LoRA and QLoRA. Supports Llama, Mistral, and Falcon with automated evaluation metrics.",
+    tags: ["LoRA", "QLoRA", "Llama", "HuggingFace"],
+    gradient: "from-indigo-600 to-violet-800",
+    icon: BrainCircuit,
+  },
+  {
+    id: 8,
+    name: "AI Code Review Assistant",
+    desc: "GPT-4 powered code review tool that analyzes pull requests for bugs, security flaws, and performance issues, then suggests precise fixes with explanations.",
+    tags: ["GPT-4", "Python", "GitHub API", "FastAPI"],
+    gradient: "from-green-600 to-emerald-800",
+    icon: Code2,
+  },
+  {
+    id: 9,
+    name: "Multi-Modal Content Generator",
+    desc: "Unified GenAI pipeline that creates blog posts, social media content, images, and video scripts from a single brief — orchestrated across GPT-4, DALL-E, and ElevenLabs.",
+    tags: ["GPT-4", "DALL-E", "ElevenLabs", "Python"],
+    gradient: "from-orange-500 to-red-700",
+    icon: Wand2,
+  },
+  {
+    id: 10,
+    name: "Semantic Search Engine",
+    desc: "Vector-powered search engine that understands meaning, not just keywords. Built on embeddings and Pinecone to deliver context-aware results across millions of documents.",
+    tags: ["Embeddings", "Pinecone", "OpenAI", "FastAPI"],
+    gradient: "from-sky-500 to-indigo-700",
+    icon: Layers,
   },
 ];
 
